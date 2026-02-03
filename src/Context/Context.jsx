@@ -295,9 +295,13 @@ const CarContext = ({children}) => {
         setCars([...cars,newCar])    
         setOpenModal(false)
         }
-
+      function handleDelete(id){
+        const ItemIndex = cars.findIndex(item=> item.id == id)
+        cars.splice(ItemIndex,1)
+        setCars([...cars])
+      }
     return (
-        <Context.Provider value={{carsSortList,carsModelList,carManageList,carsTodoList,cars,setCars,openModal,setOpenModal,handleCreate}}>{children}</Context.Provider>
+        <Context.Provider value={{carsSortList,carsModelList,carManageList,carsTodoList,cars,setCars,openModal,setOpenModal,handleCreate,handleDelete}}>{children}</Context.Provider>
     )
 }
 
