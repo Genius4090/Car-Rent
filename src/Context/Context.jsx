@@ -11,7 +11,7 @@ const CarContext = ({ children }) => {
   const carsSortList = [
     {
       id: 1,
-      title: "Compact"
+      title: "Compact",
     },
     {
       id: 2,
@@ -495,7 +495,7 @@ const SocialIcons = [
       }
 
 ]
-  const [cars, setCars] = useState(carsTodoList)
+const [cars, setCars] = useState(carsTodoList.slice(0, 6))
   const [openModal, setOpenModal] = useState(false)
   function handleCreate(e) {
     e.preventDefault()
@@ -521,8 +521,33 @@ const SocialIcons = [
     cars.splice(ItemIndex, 1)
     setCars([...cars])
   }
+
+  function handleFilter(typeTitle) {
+    let typeId;
+  
+    switch (typeTitle) {
+      case "Compact":
+        typeId = 1;
+        break;
+      case "Sports cars":
+        typeId = 2;
+        break;
+      case "Vans":
+        typeId = 3;
+        break;
+      default:
+        return;
+    }
+  
+    const filteredCars = carsTodoList.filter(
+      car => car.carTypeId === typeId
+    );
+  
+    setCars(filteredCars);
+  }
+  
   return (
-    <Context.Provider value={{ carsSortList, carsModelList, carManageList, carsTodoList, cars, setCars, openModal, setOpenModal, handleCreate, handleDelete, googleList, brandsList, servicesList, safetyList, footerList1, footerList2,SocialIcons}}>{children}</Context.Provider>
+    <Context.Provider value={{ carsSortList, carsModelList, carManageList, carsTodoList, cars, setCars, openModal, setOpenModal, handleCreate, handleDelete, googleList, brandsList, servicesList, safetyList, footerList1, footerList2,SocialIcons,handleFilter}}>{children}</Context.Provider>
   )
 }
 

@@ -12,8 +12,9 @@ import { Context } from "../Context/Context"
 
 
 function Cars() {
-  const {carsSortList,cars,openModal,setOpenModal} = useContext(Context)
+  const {carsSortList,cars,openModal,setOpenModal,setCars,carsTodoList,handleFilter} = useContext(Context)
 
+  
   
   return (
 <section className="">
@@ -22,10 +23,10 @@ function Cars() {
   <Button onClick={()=> setOpenModal(true)} title="Create +" extraStyle={"extraStyle"} moreStyle={"border bg-white! py-3! text-purple-600! border-purple-600! absolute top-[191px] right-45 hover:bg-purple-600! hover:text-white! duration-300"}/>
 <p className="text-[#555555] text-center leading-6">We provide our customers with the most incredible driving emotions. <br /> That is why there are only world-class cars in our fleet</p>
 <div className="flex mt-6 gap-4">
-  {carsSortList.map(item => <Button key={item.id} title={item.title} moreStyle={"bg-white border border-gray-400 py-[19px]! px-[40px]!"}/>)}
+  {carsSortList.map(item => <Button onClick={() => handleFilter(item.title)} key={item.id} title={item.title} moreStyle={"bg-white border border-gray-400 py-[19px]! px-[40px]!"}/>)}
 </div>
 <ul className="flex flex-wrap justify-center items-center gap-4 py-6">{cars.length > 0 ? (cars.map(item => <CarItem key={item.id} item={item}/>)) : (<p className="font-semibold text-lg">No cars...</p>)}</ul>
- <Button title="View all cars" extraStyle={"extraStyle"}/>
+ <Button onClick={()=> setCars(carsTodoList)} title="View all cars" extraStyle={"extraStyle"}/>
 
   </div>
 
