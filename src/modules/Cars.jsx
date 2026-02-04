@@ -26,6 +26,7 @@ function Cars() {
 </div>
 <ul className="flex flex-wrap justify-center items-center gap-4 py-6">{cars.length > 0 ? (cars.map(item => <CarItem key={item.id} item={item}/>)) : (<p className="font-semibold text-lg">No cars...</p>)}</ul>
  <Button title="View all cars" extraStyle={"extraStyle"}/>
+
   </div>
 
   <Modal openModal={openModal} setOpenModal={setOpenModal}>

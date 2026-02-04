@@ -20,3 +20,31 @@
         margin: 0 auto;
     }
 }
+
+
+
+/* Custom scrollbar styling */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: white transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 6px; /* Height for horizontal scrollbar */
+
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    margin: 0 10px; /* Add some margin on sides */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #1a73e8;
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #0d62d9;
+  }

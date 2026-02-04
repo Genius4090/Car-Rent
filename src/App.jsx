@@ -1,6 +1,7 @@
 import Header from './modules/Header'
 import Hero from './modules/Hero/Hero'
 import Cars from './modules/Cars'
+import Slider from './modules/Slider'
 
 function App() {
   
@@ -9,6 +10,7 @@ function App() {
  <Header/>
  <Hero/>
  <Cars/>
+ <Slider/>
  </>
   )
 }

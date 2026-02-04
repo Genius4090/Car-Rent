@@ -19,4 +19,7 @@ import Car13 from "./car13.png"
 import Car14 from "./car14.png"
 import Car15 from "./car15.png"
 import Car16 from "./car16.png"
-export {SiteLogo,Slider1,Slider2,Slider3,SliderShadow,Car1,Car2,Car3,Car4,Car5,Car6,Car7,Car8,Car9,Car10,Car11,Car12,Car13,Car14,Car15,Car16}
+import GoogleUser1 from "./googleUser1.png"
+import GoogleUser2 from "./googleUser2.png"
+import GoogleUser3 from "./googleUser3.png"
+export {SiteLogo,Slider1,Slider2,Slider3,SliderShadow,Car1,Car2,Car3,Car4,Car5,Car6,Car7,Car8,Car9,Car10,Car11,Car12,Car13,Car14,Car15,Car16,GoogleUser1,GoogleUser2,GoogleUser3}
