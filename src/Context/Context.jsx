@@ -8,6 +8,7 @@ const Context = createContext()
 
 const CarContext = ({ children }) => {
 
+
   const carsSortList = [
     {
       id: 1,
@@ -495,13 +496,21 @@ const SocialIcons = [
       }
 
 ]
-const [cars, setCars] = useState(carsTodoList.slice(0, 6))
+const [allCars, setAllCars] = useState(carsTodoList);
+const [cars, setCars] = useState(carsTodoList.slice(0, 6));
+
+
   const [openModal, setOpenModal] = useState(false)
+  
   function handleCreate(e) {
-    e.preventDefault()
-    const findCarModelContent = carsModelList.find(item => item.id == e.target.carModel.value)
+    e.preventDefault();
+  
+    const findCarModelContent = carsModelList.find(
+      item => item.id == e.target.carModel.value
+    );
+  
     const newCar = {
-      id: cars.length + 1,
+      id: Date.now(), // stable & unique
       title: e.target.title.value,
       img: e.target.image.value,
       seats: e.target.seats.value,
@@ -509,13 +518,16 @@ const [cars, setCars] = useState(carsTodoList.slice(0, 6))
       manageId: e.target.carManage.value,
       yearlyMade: e.target.madeFrom.value,
       consumption: e.target.consumption.value,
-      carModel: e.target.carModel.value,
-      carModelId: findCarModelContent.title,
-      carTypeId: e.target.carSort.value
-    }
-    setCars([...cars, newCar])
-    setOpenModal(false)
+      carModel: findCarModelContent.title,
+      carModelId: findCarModelContent.id,
+      carTypeId: Number(e.target.carSort.value),
+    };
+  
+    setAllCars(prev => [...prev, newCar]);
+    setCars(prev => [...prev, newCar]);
+    setOpenModal(false);
   }
+  
   function handleDelete(id) {
     const ItemIndex = cars.findIndex(item => item.id == id)
     cars.splice(ItemIndex, 1)
@@ -523,28 +535,23 @@ const [cars, setCars] = useState(carsTodoList.slice(0, 6))
   }
 
   function handleFilter(typeTitle) {
-    let typeId;
+    const map = {
+      "Compact": 1,
+      "Sports cars": 2,
+      "Vans": 3,
+    };
   
-    switch (typeTitle) {
-      case "Compact":
-        typeId = 1;
-        break;
-      case "Sports cars":
-        typeId = 2;
-        break;
-      case "Vans":
-        typeId = 3;
-        break;
-      default:
-        return;
-    }
+    const typeId = map[typeTitle];
+    if (!typeId) return;
   
-    const filteredCars = carsTodoList.filter(
+    const filtered = allCars.filter(
       car => car.carTypeId === typeId
     );
   
-    setCars(filteredCars);
+    setCars(filtered);
+    setActiveFilter(typeTitle);
   }
+  
   
   return (
     <Context.Provider value={{ carsSortList, carsModelList, carManageList, carsTodoList, cars, setCars, openModal, setOpenModal, handleCreate, handleDelete, googleList, brandsList, servicesList, safetyList, footerList1, footerList2,SocialIcons,handleFilter}}>{children}</Context.Provider>

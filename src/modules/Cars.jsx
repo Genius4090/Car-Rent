@@ -31,7 +31,11 @@ function Cars() {
   </div>
 
   <Modal openModal={openModal} setOpenModal={setOpenModal}>
-    <Button onClick={()=> setOpenModal()} icon={<CloseIcon/>} iconPos="right" moreStyle={"p-4.5! absolute right-2 top-2"}/>
+    <Button   onClick={() => {
+    setCars(allCars);
+    setActiveFilter(null);
+  }}
+ icon={<CloseIcon/>} iconPos="right" moreStyle={"p-4.5! absolute right-2 top-2"}/>
      <CreateForm />
 
   </Modal>
