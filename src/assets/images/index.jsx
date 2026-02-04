@@ -22,4 +22,11 @@ import Car16 from "./car16.png"
 import GoogleUser1 from "./googleUser1.png"
 import GoogleUser2 from "./googleUser2.png"
 import GoogleUser3 from "./googleUser3.png"
-export {SiteLogo,Slider1,Slider2,Slider3,SliderShadow,Car1,Car2,Car3,Car4,Car5,Car6,Car7,Car8,Car9,Car10,Car11,Car12,Car13,Car14,Car15,Car16,GoogleUser1,GoogleUser2,GoogleUser3}
+import Brand1 from "./Brand1.png"
+import Brand2 from "./Brand2.png"
+import Brand3 from "./Brand3.png"
+import Brand4 from "./Brand4.png"
+import Brand5 from "./Brand5.png"
+import Brand6 from "./Brand6.png"
+import SafetyGuy from "./SafetyGuy.png"
+export {SiteLogo,Slider1,Slider2,Slider3,SliderShadow,Car1,Car2,Car3,Car4,Car5,Car6,Car7,Car8,Car9,Car10,Car11,Car12,Car13,Car14,Car15,Car16,GoogleUser1,GoogleUser2,GoogleUser3,Brand1,Brand2,Brand3,Brand4,Brand5,Brand6,SafetyGuy}

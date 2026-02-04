@@ -1,7 +1,4 @@
-import Header from './modules/Header'
-import Hero from './modules/Hero/Hero'
-import Cars from './modules/Cars'
-import Slider from './modules/Slider'
+import { Brands, Cars, Footer, Header, Hero, Safety, Services, Slider } from "./modules"
 
 function App() {
   
@@ -11,6 +8,10 @@ function App() {
  <Hero/>
  <Cars/>
  <Slider/>
+ <Brands/>
+ <Services/>
+ <Safety/>
+ <Footer/>
  </>
   )
 }

@@ -5,4 +5,6 @@ import Modal from "./Modal";
 import CreateForm from "./CreateForm";
 import InputForm from "./InputForm";
 import SelectForm from "./SelectForm";
-export {NavItem,Button,CarItem,Modal,CreateForm,InputForm,SelectForm}
+import ServiceItem from "./ServiceItem";
+import FooterItem from "./FooterItem";
+export {NavItem,Button,CarItem,Modal,CreateForm,InputForm,SelectForm,ServiceItem,FooterItem}
